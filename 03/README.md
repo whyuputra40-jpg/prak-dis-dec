@@ -57,9 +57,18 @@ Sinkronisasi waktu merupakan proses menyamakan waktu pada beberapa perangkat aga
 
 Salah satu protokol yang digunakan adalah NTP (*Network Time Protocol*). NTP memungkinkan perangkat menyelaraskan waktu dengan server waktu melalui jaringan. Selain NTP, terdapat PTP (*Precision Time Protocol*) yang digunakan untuk kebutuhan sinkronisasi dengan ketelitian tinggi pada lingkungan yang mendukungnya.
 
-## 2.2 Vector Clock
 
-
-## 2.3 Deadlock
+## 2.2 Deadlock
 <img width="272" height="302" alt="image" src="https://github.com/user-attachments/assets/de373dd4-8031-49cd-a8d1-2c1af0f68129" />
 
+## 2.3 Deadlock02
+
+## 2.4 multithreads
+
+## 2.5 Race condition
+
+## 2.6 Race condition02
+
+## 2.7 Raft
+
+## 2.8 vlock
