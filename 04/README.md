@@ -68,32 +68,56 @@ penjelasan:
 SELECT * FROM pg_stat_replication; pada database PostgreSQL dengan mode tampilan diperluas (\x), yang menunjukkan bahwa server utama sedang aktif melakukan streaming replication ke server replika dengan status streaming serta nilai LSN (Log Sequence Number) yang sudah sinkron sempurna
 
 2.Pemeriksaan status pada server replika
+<img width="197" height="124" alt="Screenshot 2026-10-29 121816" src="https://github.com/user-attachments/assets/4684513c-10d3-4512-8982-592d4f1b6547" />
+
 
 penjelasan:
 
 3.uji manipulasi data 
+<img width="536" height="161" alt="Screenshot 2026-10-29 121825" src="https://github.com/user-attachments/assets/3c321bfa-73d1-4b11-aee0-2e49d490908b" />
+
+penjelasan:
 
 ##2.5 Simulasi High-Availability
 1.matikan server primary
+<img width="301" height="86" alt="Screenshot 2026-10-29 121956" src="https://github.com/user-attachments/assets/7440c1bf-dedd-45b9-84b8-bbc46cb5be0b" />
 
 Penjelasan:
 
 2.Promosi standby menjadi primary baru
+<img width="326" height="287" alt="Screenshot 2026-10-29 122002" src="https://github.com/user-attachments/assets/5bd4efca-227b-4434-b7f2-e3bd1b8a6789" />
 
-penjelasan;
+penjelasan:
 
 3.Bagian II replikasi master master menggunakan apache ignite 3.1.0
 
 3.1 konfigurasi lingkungan cluster
+<img width="335" height="131" alt="Screenshot 2026-10-29 122112" src="https://github.com/user-attachments/assets/069467a9-7c62-48c6-94b3-3a4474f6d8bc" />
 
 penjelasan:
+Gambar di atas menampilkan eksekusi serangkaian perintah SQL pada database PostgreSQL untuk melakukan proses failover atau promosi server replika. Melalui kueri SELECT pg_is_in_recovery();, awalnya diketahui bahwa database berstatus sebagai replika (t / true), lalu perintah SELECT pg_promote(); dijalankan untuk mengubah statusnya menjadi server utama, yang kemudian dikonfirmasi kembali dengan kueri pg_is_in_recovery() yang menghasilkan nilai f (false), menandakan database kini telah resmi aktif sebagai primary yang mandiri.
 
 3.2 inisialisasi cluster dan inspeksi jaringan 
+<img width="383" height="64" alt="Screenshot 2026-10-29 122206" src="https://github.com/user-attachments/assets/e6d64a68-09e2-4f60-8aac-90ef55dfac78" />
+
+penjelasan:
+Gambar di atas menampilkan eksekusi perintah alias dcu (singkatan umum untuk docker compose up -d) di terminal. Perintah tersebut berhasil membuat jaringan Docker kustom bernama ignite3_default beserta tiga container klaster Apache Ignite 3, yaitu ignite3-node1-1, ignite3-node2-1, dan ignite3-node3-1, yang kini aktif berjalan di latar belakang
 
 1.pemetaan alamat ip node internal via docker inspect
+<img width="602" height="151" alt="Screenshot 2026-10-29 122213" src="https://github.com/user-attachments/assets/5e3f7dd3-5446-4ed7-b623-638f91fc714d" />
 
 penjelasan:
+Gambar di atas menampilkan perintah terminal Linux yang menggunakan sudo docker inspect untuk mengambil alamat IP dari tiga container Docker yang berbeda (masing-masing bernama ignite3-node...), dengan hasil keluaran berupa IP 172.18.0.2, 172.18.0.3, dan 172.18.0.4
 
 2.inisialisasi kluster melalui apache ignite cli
+<img width="283" height="157" alt="image" src="https://github.com/user-attachments/assets/aad43096-0cca-48c6-9a92-161f45a4d196" />
 
 penjelasan:
+Gambar di atas menampilkan eksekusi serangkaian perintah baris perintah pada node klaster Apache Ignite ([node1]) untuk menjalankan file skrip SQL eksternal. Perintah pertama menjalankan schema.sql untuk menyiapkan struktur tabel (dengan hasil Updated 0 rows), diikuti oleh eksekusi file tracks.sql yang memperbarui data sebanyak 1000 dan 503 baris, serta file invoices.sql yang memasukkan atau memperbarui data faktur sebanyak 1000 dan 715 baris.
+
+##kesimpulan##
+Praktikum berhasil mengkonfigurasi PostgreSQL 18 Streaming Replication, membuktikan aliran sinkronisasi data instan dari node Primary ke Standby/Replica.
+
+Skenario High-Availability pada PostgreSQL teruji dengan sukses lewat pengalihan fungsi replica menjadi primary menggunakan pg_promote().
+
+Praktikum berhasil mengkonfigurasi kluster Apache Ignite 3.1.0 Multi-Primary, membuktikan bahwa eksekusi transaksi pada satu node secara otomatis terdistribusi dan terkueri dari node lainnya.
