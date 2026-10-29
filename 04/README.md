@@ -31,7 +31,7 @@ Penjelasan singkat mengenai pentingnya **replikasi dan konsistensi data** dalam 
 
 ## 2. Bagian I: Streaming Replication Menggunakan PostgreSQL 18
 
-Penjelasan konfigurasi replikasi *Single-Primary* (Master-Slave/Standby).
+Sebelum menjalankan service, dipastikan daemon Docker (dockerd) telah aktif di sistem operasi Linux.
 
 ### 2.1 Prasyarat dan Lingkungan Kerja
 
