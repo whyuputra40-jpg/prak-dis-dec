@@ -62,3 +62,38 @@ penjelasan:
 Proses pada gambar menunjukkan inisialisasi dan pengaktifan arsitektur streaming replication PostgreSQL menggunakan Docker Compose pada proyek src. Perintah docker compose -p src up -d berhasil membuat jaringan Docker kustom beserta dua container, yaitu src-postgres_primary-1 dan src-postgres_replica-1, yang kemudian dikonfirmasi melalui perintah docker compose -p src ps bahwa keduanya telah aktif berjalan di latar belakang dalam kondisi sehat (healthy).
 
 ##2.4 Pengujian Replikasi Data dan singkronisasi
+1.pemeriksaan status diagnostik pada server primary
+<img width="287" height="247" alt="image" src="https://github.com/user-attachments/assets/317759ea-3dbb-4501-8c5a-5512c2beb85c" />
+penjelasan:
+SELECT * FROM pg_stat_replication; pada database PostgreSQL dengan mode tampilan diperluas (\x), yang menunjukkan bahwa server utama sedang aktif melakukan streaming replication ke server replika dengan status streaming serta nilai LSN (Log Sequence Number) yang sudah sinkron sempurna
+
+2.Pemeriksaan status pada server replika
+
+penjelasan:
+
+3.uji manipulasi data 
+
+##2.5 Simulasi High-Availability
+1.matikan server primary
+
+Penjelasan:
+
+2.Promosi standby menjadi primary baru
+
+penjelasan;
+
+3.Bagian II replikasi master master menggunakan apache ignite 3.1.0
+
+3.1 konfigurasi lingkungan cluster
+
+penjelasan:
+
+3.2 inisialisasi cluster dan inspeksi jaringan 
+
+1.pemetaan alamat ip node internal via docker inspect
+
+penjelasan:
+
+2.inisialisasi kluster melalui apache ignite cli
+
+penjelasan:
