@@ -1,4 +1,4 @@
-# Kerangka Laporan Praktikum
+# Laporan Praktikum
 
 **Mata Kuliah:** Praktikum Sistem Terdistribusi dan Terdesentralisasi
 
