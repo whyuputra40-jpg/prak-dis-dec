@@ -40,9 +40,25 @@ Penjelasan singkat mengenai pentingnya **replikasi dan konsistensi data** dalam 
 Sebelum menjalankan service, dipastikan daemon Docker (dockerd) telah aktif di sistem operasi Linux.
 
 1. Berkas 00_init.sql
-   
+   <img width="310" height="46" alt="Screenshot 2026-10-29 110308" src="https://github.com/user-attachments/assets/ed247d5c-efe4-4f25-9306-833cf02eb332" />
+penjelasan:
+berisi perintah SQL yang dijalankan saat inisialisasi database PostgreSQL. File ini biasanya digunakan untuk membuat tabel, menentukan struktur kolom, dan menyiapkan data awal yang diperlukan dalam praktikum. Pada konfigurasi Docker Compose kamu, file tersebut dipasang ke direktori /docker-entrypoint-initdb.d/00_init.sql agar PostgreSQL dapat menjalankannya saat database pertama kali dibuat.
+
 2. Berkas docker-compose.yaml
+   
+<img width="319" height="450" alt="Screenshot 2026-10-29 111942" src="https://github.com/user-attachments/assets/19743d0f-2fd4-448d-a968-14456118aa33" />
+penjelasan:
+File docker-compose.yaml digunakan untuk mengatur dua container PostgreSQL, yaitu postgres_primary sebagai server utama dan postgres_replica sebagai server replika. File ini menentukan image PostgreSQL, username dan password database, port koneksi, serta konfigurasi replikasi melalui pengaturan WAL dan pg_basebackup. Selain itu, terdapat healthcheck untuk memeriksa kesiapan database dan depends_on agar replica bergantung pada primary. Dengan konfigurasi tersebut, Docker Compose membantu menjalankan kedua server PostgreSQL dalam satu jaringan sehingga dapat digunakan untuk praktikum replikasi database.
 
 3.Berkas env.sh
 
+<img width="241" height="82" alt="Screenshot 2026-10-29 111947" src="https://github.com/user-attachments/assets/9866314c-f1e7-4a66-9d1b-0f9827e16a4e" />
+penjelasan:
+File env.sh digunakan untuk menyimpan konfigurasi lingkungan dan mempermudah pengguna menjalankan perintah praktikum melalui terminal Linux. File ini dapat berisi variabel lingkungan, alias, atau fungsi seperti dcu yang digunakan untuk menjalankan Docker Compose dengan lebih praktis. Perintah source env.sh berfungsi memuat konfigurasi tersebut ke terminal yang sedang digunakan, sehingga perintah yang didefinisikan di dalamnya dapat langsung dipakai. Dengan adanya file env.sh, proses menjalankan container menjadi lebih sederhana tanpa harus mengetik perintah Docker Compose yang panjang berulang kali.
 
+## 2.3 Menjalasankan docker compose da analisis log
+<img width="381" height="127" alt="Screenshot 2026-10-29 112238" src="https://github.com/user-attachments/assets/3c64dc54-bd89-45cc-8f9e-81a2eab77221" />
+penjelasan:
+Proses pada gambar menunjukkan inisialisasi dan pengaktifan arsitektur streaming replication PostgreSQL menggunakan Docker Compose pada proyek src. Perintah docker compose -p src up -d berhasil membuat jaringan Docker kustom beserta dua container, yaitu src-postgres_primary-1 dan src-postgres_replica-1, yang kemudian dikonfirmasi melalui perintah docker compose -p src ps bahwa keduanya telah aktif berjalan di latar belakang dalam kondisi sehat (healthy).
+
+##2.4 Pengujian Replikasi Data dan singkronisasi
