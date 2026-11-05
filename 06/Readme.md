@@ -148,7 +148,7 @@ Perkembangan era Big Data menuntut penggunaan sistem penyimpanan terdistribusi y
 
 
 * Menjalankan daemon HDFS (`start-dfs.sh`).
-<img width="958" height="509" alt="image" src="https://github.com/user-attachments/assets/c8f11dc8-abdf-454e-b20f-0e7ae07a2c98" />
+<img width="102" height="27" alt="image" src="https://github.com/user-attachments/assets/4409cec7-6e4d-4c0a-9703-ea2966e9f6d0" />
 
 
 * Pemantauan Cluster via Web UI HDFS (`http://localhost:9870/dfshealth.html`).
@@ -156,6 +156,8 @@ Perkembangan era Big Data menuntut penggunaan sistem penyimpanan terdistribusi y
 
 
 * Penghentian daemon HDFS (`stop-dfs.sh`).
+  <img width="385" height="67" alt="Screenshot 2026-11-05 133137" src="https://github.com/user-attachments/assets/473c0e98-d8da-4ef5-b42e-277f0eb31535" />
+
 <img width="183" height="47" alt="image" src="https://github.com/user-attachments/assets/69f9bc58-09c0-4128-b08d-b059d01e03f1" />
 
 
