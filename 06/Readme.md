@@ -197,11 +197,16 @@ Gambar terminal di atas menunjukkan bahwa Anda telah menjalankan perintah stop-d
 * **4.2 Mengunggah File CSV dari Local ke HDFS**
 
 <img width="477" height="399" alt="image" src="https://github.com/user-attachments/assets/3041d3a9-244f-4592-ab6e-bd828821fa60" />
+penjelasan:
+
+Gambar terminal di atas menunjukkan bahwa Anda telah berhasil menjalankan perintah-perintah operasi sistem berkas HDFS (Hadoop Distributed File System):
 
 
 <img width="431" height="47" alt="image" src="https://github.com/user-attachments/assets/4dc42811-e1b5-4de4-8512-52157f600875" />
 
 penjelasan:
+Gambar terminal di atas menunjukkan bahwa Anda telah berhasil mengunduh tiga file dataset sampel—yaitu iris.csv, tips.csv, dan penguins.csv—menggunakan wget, memverifikasinya secara lokal di direktori ~/datasets, lalu mengunggah semuanya secara bersamaan ke dalam sistem penyimpanan terdistribusi HDFS pada direktori /user/cerberuzz58/datasets/ melalui perintah hdfs dfs -put, yang kemudian dikonfirmasi berhasil dengan ditemukannya ketiga item berkas tersebut lewat perintah pengecekan hdfs dfs -ls.
+
 
 ### **BAB V: KESIMPULAN DAN SARAN**
 
