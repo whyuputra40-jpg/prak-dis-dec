@@ -156,15 +156,19 @@ Gambar di atas menampilkan bagian akhir dari file konfigurasi lingkungan Hadoop,
 * Pelaksanaan format NameNode (`hdfs namenode -format`).
 <img width="473" height="408" alt="image" src="https://github.com/user-attachments/assets/6d8ffd93-a983-4d4a-8ea3-00ade59abe1c" />
 <img width="466" height="264" alt="image" src="https://github.com/user-attachments/assets/ad4e1c17-4f86-4353-961f-00ad6e99559a" />
-
+penjelasan:
+Gambar terminal di atas menunjukkan bahwa proses pemformatan NameNode Hadoop melalui perintah hdfs namenode -format telah berhasil dijalankan dengan sukses.
 
 
 * Menjalankan daemon HDFS (`start-dfs.sh`).
 <img width="102" height="27" alt="image" src="https://github.com/user-attachments/assets/4409cec7-6e4d-4c0a-9703-ea2966e9f6d0" />
-
+penjelasan:
+Gambar terminal di atas menunjukkan hasil dari perintah jps (Java Process Status). Berdasarkan output tersebut, layanan utama HDFS (Hadoop Distributed File System) telah berhasil berjalan dengan aktif,
 
 * Pemantauan Cluster via Web UI HDFS (`http://localhost:9870/dfshealth.html`).
 <img width="958" height="509" alt="image" src="https://github.com/user-attachments/assets/8c9ffb05-8395-4487-a3c0-14eba10c28ae" />
+penjelasan:
+Gambar di atas menampilkan halaman antarmuka web (Web UI) NameNode Apache Hadoop yang diakses melalui peramban web pada alamat localhost:9870/dfshealth.html#tab-overview.
 
 
 * Penghentian daemon HDFS (`stop-dfs.sh`).
@@ -172,7 +176,8 @@ Gambar di atas menampilkan bagian akhir dari file konfigurasi lingkungan Hadoop,
 
 <img width="183" height="47" alt="image" src="https://github.com/user-attachments/assets/69f9bc58-09c0-4128-b08d-b059d01e03f1" />
 
-
+penjelasan:
+Gambar terminal di atas menunjukkan bahwa Anda telah menjalankan perintah stop-dfs.sh untuk menghentikan layanan klaster HDFS (Hadoop Distributed File System).
 
 
 ---
