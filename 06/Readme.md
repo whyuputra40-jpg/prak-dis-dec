@@ -38,11 +38,9 @@ Perkembangan era Big Data menuntut penggunaan sistem penyimpanan terdistribusi y
 <img width="464" height="444" alt="image" src="https://github.com/user-attachments/assets/cfda9df6-85c7-407e-a3aa-fd85b7247ac6" />
 
 <img width="197" height="38" alt="image" src="https://github.com/user-attachments/assets/1a4e970a-7930-4cff-8233-463c42d0393d" />
+penjelasan:
+Gambar tersebut menampilkan halaman unduhan (download page) resmi dari Apache Hadoop yang menyediakan informasi mengenai berbagai versi perangkat lunak yang dirilis, termasuk tanggal rilis, tautan unduhan untuk kode sumber (source download) dan biner (binary download), serta catatan rilis (release notes). Berdasarkan informasi yang tertera, Hadoop dirilis sebagai tarball kode sumber beserta tarball biner pendukung yang didistribusikan melalui situs cermin (mirror sites), di mana pengguna diimbau untuk memeriksa keamanannya terhadap potensi perusakan menggunakan GPG atau SHA-512. Tabel tersebut memperlihatkan beberapa versi yang tersedia seperti versi 3.5.0, 3.4.3, 3.4.2, dan 3.4.1 lengkap dengan tanggal rilis masing-masing.
 
-* Mampu melakukan format NameNode dan menjalankan daemon HDFS.
-
-
-* Memahami serta mempraktikkan perintah-perintah dasar manajemen direktori dan file pada HDFS.
 
 
 
@@ -51,23 +49,26 @@ Perkembangan era Big Data menuntut penggunaan sistem penyimpanan terdistribusi y
 
 * **2.1 Persyaratan Perangkat Lunak (*Prerequisites*)**
   <img width="462" height="146" alt="image" src="https://github.com/user-attachments/assets/6061d2e1-eea0-422d-817e-2098bdd1dd18" />
-
+penjelasan:
+Gambar tersebut menampilkan jendela terminal PowerShell di sistem Windows (PS C:\Users\X1 Yoga) yang sedang menjalankan perintah pemeriksaan versi Java serta variabel lingkungan. Berdasarkan output di layar, sistem telah berhasil menginstal Java versi 25 (LTS) beserta kompiler javac versi 25. Akan tetapi, saat perintah echo $env:JAVA_HOME dijalankan, variabel lingkungan JAVA_HOME tidak menampilkan hasil apa pun, yang menandakan bahwa variabel tersebut belum dikonfigurasi pada sistem.
 
 * Apache Hadoop (Versi 3.5.0).
 <img width="467" height="174" alt="image" src="https://github.com/user-attachments/assets/dccad55f-1cb9-4e69-84e3-1a9817019079" />
-
+penjelasan:
+Unduhan file hadoop-3.5.0.tar.gz telah berhasil diselesaikan melalui terminal Linux dengan ukuran sekitar 554 MB. Langkah berikutnya yang perlu Anda lakukan adalah mengekstrak file arsip tersebut dan mengatur konfigurasi lingkungan sistem agar Hadoop siap dijalankan.
 
 * Utilities (`pdsh`, SSH, `sshd`).
 <img width="426" height="135" alt="image" src="https://github.com/user-attachments/assets/0885bad4-6a10-40f6-924c-ac893bc939ac" />
-
-
+penjelasan:
+Status layanan SSH pada terminal menunjukkan bahwa ssh.service saat ini berada dalam kondisi active (running) dan berjalan dengan normal. Namun, terdapat catatan bahwa status layanan tersebut tertera disabled, yang berarti layanan SSH tidak akan otomatis aktif kembali secara otomatis ketika sistem (komputer/server) direstart
 
 
 * **2.2 Spesifikasi Lingkungan Sistem**
 * Sistem Operasi yang digunakan (misal: Artix Linux, Ubuntu, dll.).
 <img width="381" height="278" alt="image" src="https://github.com/user-attachments/assets/107c9281-cb3b-4e94-bd7d-9a39e740dcd9" />
 <img width="462" height="155" alt="image" src="https://github.com/user-attachments/assets/1b041bf9-e6e8-438e-bafd-84f6f3103de5" />
-
+penjelasan:
+Gambar terminal di atas menunjukkan proses instalasi WSL (Windows Subsystem for Linux) dengan distribusi Ubuntu-24.04 yang berhasil diselesaikan.
 
 * Pengaturan Variabel Lingkungan (`PATH` dan `JAVA_HOME`).
 <img width="385" height="64" alt="image" src="https://github.com/user-attachments/assets/7b8a3138-fe4f-454b-8408-9e44b7634524" />
