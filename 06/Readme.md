@@ -123,23 +123,28 @@ Gambar terminal di atas menunjukkan bahwa Anda telah berhasil membuat kunci SSH 
 * Penjelasan edit/konfigurasi file:
 1. `hdfs-site.xml` (Replikasi data).
   <img width="317" height="221" alt="image" src="https://github.com/user-attachments/assets/c28a4e8b-678e-45a7-8f14-a83ac223b558" />
+penjelasan:
+Gambar di atas menampilkan editor teks nano yang sedang mengedit file konfigurasi Hadoop (yaitu core-site.xml) di direktori etc/hadoop/. Pada bagian bawah file tersebut, Anda telah menambahkan properti fs.defaultFS dengan nilai hdfs://localhost:9000, yang berfungsi untuk mengonfigurasi sistem file default Hadoop agar berjalan secara pseudo-distributed pada localhost
 
-
-2. `core-site.xml` (Pengaturan Default FS NameNode & Proxy user).
+3. `core-site.xml` (Pengaturan Default FS NameNode & Proxy user).
   <img width="327" height="275" alt="image" src="https://github.com/user-attachments/assets/bd002181-057d-4ac5-b97e-d8ce25286c9f" />
-
+penjelasan:
+Gambar di atas menampilkan editor teks nano yang sedang mengedit file konfigurasi hdfs-site.xml di dalam direktori Hadoop. Di dalam file tersebut, Anda telah menambahkan tiga properti penting untuk mode pseudo-distributed: dfs.replication dengan nilai 1, serta direktori penyimpanan untuk NameNode dan DataNode yang diarahkan ke folder /home/cerberuzz58/hadoopdata/hdfs/namenode dan datanode. Konfigurasi ini sudah tepat untuk menjalankan Hadoop pada satu mesin tunggal.
   
-3. `mapred-site.xml` (Pengaturan MapReduce Framework YARN).
+5. `mapred-site.xml` (Pengaturan MapReduce Framework YARN).
   <img width="284" height="196" alt="image" src="https://github.com/user-attachments/assets/379b01c9-a3f5-4812-8fe0-43cac9aec3e1" />
+penjelasan:
+Gambar di atas menampilkan editor teks nano yang sedang mengedit file konfigurasi mapred-site.xml di dalam direktori Hadoop. Di dalam file tersebut, Anda telah menambahkan properti mapreduce.framework.name dengan nilai yarn untuk mengonfigurasi kerangka kerja MapReduce agar berjalan di atas manajer sumber daya YARN.   
 
-
-4. `yarn-site.xml` (Pengaturan NodeManager & Alokasi Memori).
+7. `yarn-site.xml` (Pengaturan NodeManager & Alokasi Memori).
   <img width="322" height="206" alt="image" src="https://github.com/user-attachments/assets/aad4bba5-5d80-47a0-8a31-ecf2ffcf6f4c" />
+penjelasan:
+Gambar di atas menampilkan editor teks yang sedang mengedit file konfigurasi yarn-site.xml. Di dalam file tersebut, Anda telah menambahkan properti yarn.nodemanager.aux-services dengan nilai mapreduce_shuffle di dalam blok <configuration>. Pengaturan ini berfungsi agar NodeManager pada YARN dapat mengenali dan menjalankan layanan shuffle yang dibutuhkan oleh pekerjaan MapReduce.
 
-
-5. `hadoop-env.sh` (Pengaturan `JAVA_HOME`).
+9. `hadoop-env.sh` (Pengaturan `JAVA_HOME`).
 <img width="362" height="383" alt="image" src="https://github.com/user-attachments/assets/082085f5-2d25-49b6-a61b-f67b8b8ab9ca" />
-
+penjelasan:
+Gambar di atas menampilkan bagian akhir dari file konfigurasi lingkungan Hadoop, yaitu hadoop-env.sh, yang dibuka menggunakan editor teks di terminal. Di baris paling bawah, terlihat bahwa Anda telah menambahkan perintah export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 untuk mendefinisikan lokasi instalasi Java yang akan digunakan oleh Hadoop
 
 
 
