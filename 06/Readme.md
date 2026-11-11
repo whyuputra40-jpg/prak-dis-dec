@@ -72,7 +72,8 @@ Gambar terminal di atas menunjukkan proses instalasi WSL (Windows Subsystem for 
 
 * Pengaturan Variabel Lingkungan (`PATH` dan `JAVA_HOME`).
 <img width="385" height="64" alt="image" src="https://github.com/user-attachments/assets/7b8a3138-fe4f-454b-8408-9e44b7634524" />
-
+penjelasan:
+Perintah-perintah di terminal Linux tersebut menunjukkan bahwa Anda sedang mengatur variabel lingkungan untuk Hadoop dengan mengekspor JAVA_HOME, HADOOP_HOME, serta memperbarui PATH. Anda juga telah memuat ulang konfigurasi tersebut melalui file env.sh dan menambahkannya secara permanen ke dalam file .bashrc
 
 
 
@@ -84,11 +85,13 @@ Gambar terminal di atas menunjukkan proses instalasi WSL (Windows Subsystem for 
 * **3.1 Pengunduhan & Ekstraksi Apache Hadoop**
  Langkah penyiapan *directory*, ekstraksi file `hadoop-3.5.0.tar.gz`, dan pembuatan *symbolic link* (`$HADOOP_HOME`).
 <img width="455" height="292" alt="image" src="https://github.com/user-attachments/assets/93419638-6ee9-4688-acea-d88c12084e6d" />
-
+penjelasan:
+Gambar terminal di atas menunjukkan tahapan lengkap proses penyiapan Hadoop di direktori ~/software/storage
 
 * Pengaturan file environment `hadoop.sh` serta pengujian perintah `hadoop`.
 <img width="464" height="76" alt="image" src="https://github.com/user-attachments/assets/317c3e7b-ede1-46a6-a0b6-951380850b7c" />
-
+penjelasan:
+Gambar terminal di atas menunjukkan bahwa perintah hadoop version telah berhasil dijalankan dengan sukses.
 
 
 
@@ -98,15 +101,18 @@ Gambar terminal di atas menunjukkan proses instalasi WSL (Windows Subsystem for 
 
 * Langkah kompilasi/instalasi paket `pdsh`.
 <img width="367" height="166" alt="image" src="https://github.com/user-attachments/assets/1d65e711-6a63-4456-a7de-0eef8b8999db" />
-
+penjelasan:
+Gambar terminal di atas menunjukkan bahwa Anda menjalankan perintah untuk memulai layanan SSH (sudo service ssh start) dan memeriksa statusnya (sudo service ssh status). Berdasarkan informasi yang ditampilkan, layanan OpenBSD Secure Shell server (ssh.service) berada dalam kondisi active (running) sejak hari Kamis, 5 November 2026 pukul 10:47:46 WIB.   Selain itu, log sistem di bagian bawah mengo
 
 * Pengaturan `PDSH_RCMD_TYPE=ssh`.
 <img width="431" height="32" alt="image" src="https://github.com/user-attachments/assets/857abc1a-68be-44f2-83ed-c41a52c3978a" />
-
+penjelasan:
+Perintah di terminal menunjukkan bahwa variabel lingkungan PDSH_RCMD_TYPE=ssh telah berhasil ditambahkan ke dalam file env.sh dan diverifikasi dengan sukses, menghasilkan output ssh. Pengaturan ini sangat penting saat menjalankan Hadoop agar utilitas parallel remote shell (pdsh) menggunakan protokol SSH alih-alih RSH
 
 * Pembuatan SSH Key Pair (`ssh-keygen`) dan pengaturan *passwordless SSH* ke `localhost`.
 <img width="463" height="352" alt="image" src="https://github.com/user-attachments/assets/a9aa5f0b-bb70-46ba-a20c-dde6e089b118" />
-
+penjelasan:
+Gambar terminal di atas menunjukkan bahwa Anda telah berhasil membuat kunci SSH baru (ssh-keygen), menambahkannya ke file authorized_keys, dan mengatur izin file dengan benar menggunakan chmod 600
 
 
 
