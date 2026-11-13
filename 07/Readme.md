@@ -136,22 +136,21 @@ Pada SaaS: Seluruh lapisan dari infrastruktur bawah hingga aplikasi dan penyimpa
 
 
 * Menghentikan *service* `dockerd` dan memanfaatkan `Dockerfile` yang sama untuk Podman.
+<img width="407" height="26" alt="image" src="https://github.com/user-attachments/assets/13e814e8-7b9e-4c38-a7d9-f872739fa1a8" />
 
 
 * Proses *build image* menggunakan `podman build -f Dockerfile -t flaskr:1.0.0 .`.
+<img width="473" height="30" alt="image" src="https://github.com/user-attachments/assets/d0f4ed29-80b0-494c-96a7-7e55f50ee5a7" />
 
 
 * Pengecekan daftar *image* (`podman image ls`).
+<img width="389" height="38" alt="image" src="https://github.com/user-attachments/assets/85a1d345-ec3e-4821-a198-a729026865d1" />
 
 
 * Menjalankan *container* dengan `podman run -p 5001:5000 flaskr:1.0.0` dan verifikasi akses di `[http://127.0.0.1:5001](http://127.0.0.1:5001)`.
+<img width="452" height="24" alt="image" src="https://github.com/user-attachments/assets/dd2efedd-6412-4c2c-b27f-2fb9870d8324" />
 
-
-* *Sertakan screenshot output build Podman, daftar image, dan hasil pengujian browser.*
-
-
-* **3.4 Analisis Perbandingan**
-* Analisis perbandingan proses *build*, ukuran *image*, dan cara eksekusi *container* antara Docker dan Podman berdasarkan hasil praktikum.
+<img width="455" height="98" alt="image" src="https://github.com/user-attachments/assets/175ebd5a-6cc6-4dcd-ab80-ff75c6613da7" />
 
 
 
@@ -160,15 +159,14 @@ Pada SaaS: Seluruh lapisan dari infrastruktur bawah hingga aplikasi dan penyimpa
 #### **BAB IV: PENUTUP**
 
 * **4.1 Kesimpulan**
-* Rangkuman hasil pemahaman konsep XaaS dan keberhasilan implementasi *Containerized App* pada dua *container engine* berbeda.
+  Berdasarkan praktikum yang telah dilakukan, dapat dipahami bahwa konsep XaaS (Everything as a Service) merupakan model layanan komputasi awan yang menyediakan berbagai kebutuhan teknologi melalui jaringan internet. XaaS memiliki beberapa kategori utama, yaitu SaaS (Software as a Service) untuk menyediakan aplikasi siap pakai, PaaS (Platform as a Service) untuk menyediakan platform pengembangan aplikasi, dan IaaS (Infrastructure as a Service) untuk menyediakan sumber daya infrastruktur seperti server, penyimpanan, dan jaringan. Melalui konsep ini, pengguna dapat memanfaatkan layanan teknologi tanpa harus mengelola seluruh infrastruktur secara mandiri.
+
+Pada praktikum implementasi Containerized App, aplikasi Flask berhasil dijalankan menggunakan dua container engine yang berbeda, yaitu Docker dan Podman. Proses dimulai dari menyiapkan lingkungan Python, menginstal dependensi, membuat Dockerfile, membangun image, hingga menjalankan container dan mengakses aplikasi melalui browser. Kedua container engine berhasil menjalankan aplikasi Flask pada port 5001. Dari praktikum ini dapat disimpulkan bahwa Docker dan Podman memiliki fungsi yang serupa dalam membangun serta menjalankan aplikasi berbasis container, sehingga penggunaan container dapat membantu proses deployment aplikasi menjadi lebih praktis, konsisten, dan mudah dipindahkan ke lingkungan yang berbeda
 
 
 
 
 
-#### **DAFTAR PUSTAKA**
-
-* Referensi modul praktikum, dokumentasi Flask, dokumentasi `uv`, serta referensi sumber gambar arsitektur XaaS.
 
 
 
